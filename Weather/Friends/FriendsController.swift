@@ -10,6 +10,7 @@ import UIKit
 class FriendsController: UITableViewController {
     
     let segueOne = "goToFriendCollection"
+    
     var friends = ["Donald",
                    "Popeye",
                    "Jerri",
@@ -20,11 +21,6 @@ class FriendsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -46,6 +42,14 @@ class FriendsController: UITableViewController {
         cell.avaFriendImage.image = UIImage(named: friend)
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == segueOne else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let destinationVC: MyFriendController = segue.destination as! MyFriendController
+        let nameFriend = friends[indexPath.row]
+        destinationVC.image = nameFriend
     }
 
 }

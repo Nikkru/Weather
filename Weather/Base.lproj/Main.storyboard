@@ -210,8 +210,8 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCollectionCell" id="2Ps-vw-B4u" customClass="FriendCollectionCell" customModule="Weather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KJL-es-E33">
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gyb-zL-MgW">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
@@ -346,10 +346,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="all groups" id="3jD-mq-luL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ywj-Wi-g6K"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ywj-Wi-g6K">
+                            <connections>
+                                <segue destination="E7F-r2-e9O" kind="unwind" identifier="addGroup" unwindAction="myUnwindActionWithUnwindSegue:" id="aJ1-Lc-Ag0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hai-cT-34A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="E7F-r2-e9O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4810.144927536232" y="-376.33928571428572"/>
         </scene>

@@ -9,16 +9,20 @@ import UIKit
 
 class MyFriendController: UIViewController{
     
+    var image: String?
+    
     @IBOutlet weak var friendCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // регистрируем нашу ячейку в коллекции
-        self.friendCollectionView.register(UINib(nibName: "FriendCollectionCell", bundle: nil), forCellWithReuseIdentifier: "FriendCollectionCell")
+        self.friendCollectionView.register(UINib(nibName: "FriendCollectionCell", bundle: nil),
+                                           forCellWithReuseIdentifier: "FriendCollectionCell")
         self.friendCollectionView.dataSource = self
         
     }
+    
 }
 
 extension MyFriendController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -27,7 +31,11 @@ extension MyFriendController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCollectionCell", for: indexPath) as! FriendCollectionCell
+        var cell = UICollectionViewCell()
+        if let friendCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCollectionCell", for: indexPath) as? FriendCollectionCell {
+            friendCell.setupCell(name: image)
+            cell = friendCell
+        }
         return cell
     }
     

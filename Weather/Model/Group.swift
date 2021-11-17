@@ -8,5 +8,6 @@
 import Foundation
 
 struct Group {
-    
+    let name: String
+    let image: String
 }

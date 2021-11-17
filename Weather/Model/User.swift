@@ -8,5 +8,8 @@
 import Foundation
 
 struct User {
-    
+    let name: String
+    let image: String
+    var friends = [String]()
+    var groups = [Group]()
 }
