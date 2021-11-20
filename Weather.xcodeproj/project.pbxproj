@@ -17,6 +17,8 @@
 		2E581A902742D1E300A6DC89 /* FriendCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E581A8E2742D1E300A6DC89 /* FriendCollectionCell.swift */; };
 		2E581A912742D1E300A6DC89 /* FriendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E581A8F2742D1E300A6DC89 /* FriendCollectionCell.xib */; };
 		2E581A962742D69F00A6DC89 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E581A952742D69F00A6DC89 /* Friend.swift */; };
+		2E8DDE6A2746DF590075EB9A /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DDE692746DF590075EB9A /* IconView.swift */; };
+		2EA368E32748FAAE0025E17B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA368E22748FAAE0025E17B /* GradientView.swift */; };
 		2EDCF874274028DF009E1F04 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCF873274028DF009E1F04 /* FriendsController.swift */; };
 		2EDCF877274028F8009E1F04 /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCF876274028F8009E1F04 /* MyGroupsController.swift */; };
 		2EDCF87B27403BBA009E1F04 /* FriendTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCF87A27403BBA009E1F04 /* FriendTableCell.swift */; };
@@ -41,6 +43,8 @@
 		2E581A8E2742D1E300A6DC89 /* FriendCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionCell.swift; sourceTree = "<group>"; };
 		2E581A8F2742D1E300A6DC89 /* FriendCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCollectionCell.xib; sourceTree = "<group>"; };
 		2E581A952742D69F00A6DC89 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		2E8DDE692746DF590075EB9A /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		2EA368E22748FAAE0025E17B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2EDCF873274028DF009E1F04 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		2EDCF876274028F8009E1F04 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
 		2EDCF87A27403BBA009E1F04 /* FriendTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableCell.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				2E4EF8B72729E49B0085E459 /* Assets.xcassets */,
 				2E4EF8B92729E49B0085E459 /* LaunchScreen.storyboard */,
 				2E4EF8BC2729E49B0085E459 /* Info.plist */,
+				2EA368E52748FC450025E17B /* Interface */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -104,6 +109,14 @@
 				2E581A952742D69F00A6DC89 /* Friend.swift */,
 			);
 			path = Archiv;
+			sourceTree = "<group>";
+		};
+		2EA368E52748FC450025E17B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				2EA368E22748FAAE0025E17B /* GradientView.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		2EDCF87127402899009E1F04 /* Groups */ = {
@@ -124,6 +137,7 @@
 				2E581A8B2742CF7F00A6DC89 /* MyFriendController.swift */,
 				2E581A8E2742D1E300A6DC89 /* FriendCollectionCell.swift */,
 				2E581A8F2742D1E300A6DC89 /* FriendCollectionCell.xib */,
+				2E8DDE692746DF590075EB9A /* IconView.swift */,
 				2E581A942742D3E600A6DC89 /* Archiv */,
 			);
 			path = Friends;
@@ -214,6 +228,7 @@
 				2EDCF87F27404BE0009E1F04 /* AllGroupsController.swift in Sources */,
 				2EDCF877274028F8009E1F04 /* MyGroupsController.swift in Sources */,
 				2EDCF87B27403BBA009E1F04 /* FriendTableCell.swift in Sources */,
+				2EA368E32748FAAE0025E17B /* GradientView.swift in Sources */,
 				2EDCF88227404CB4009E1F04 /* MyGroupsCell.swift in Sources */,
 				2EDCF88F27404DEC009E1F04 /* MyFriendCollectionController.swift in Sources */,
 				2E581A8C2742CF7F00A6DC89 /* MyFriendController.swift in Sources */,
@@ -222,6 +237,7 @@
 				2E4EF8AF2729E49A0085E459 /* AppDelegate.swift in Sources */,
 				2E4EF8B12729E49A0085E459 /* SceneDelegate.swift in Sources */,
 				2E581A962742D69F00A6DC89 /* Friend.swift in Sources */,
+				2E8DDE6A2746DF590075EB9A /* IconView.swift in Sources */,
 				2EDCF88927404D0D009E1F04 /* User.swift in Sources */,
 				2EDCF88527404CCC009E1F04 /* AllGroupsCell.swift in Sources */,
 			);

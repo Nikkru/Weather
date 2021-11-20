@@ -14,7 +14,8 @@ class MyGroupsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupShadowImage()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,5 +23,13 @@ class MyGroupsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    func setupShadowImage() {
+        myGroupImage.layer.cornerRadius = 20
+        myGroupImage.clipsToBounds = true
+        myGroupImage.layer.masksToBounds = false
+        myGroupImage.layer.shadowRadius = 10
+        myGroupImage.layer.shadowOpacity = 1.0
+        myGroupImage.layer.shadowOffset = CGSize(width: 3, height: 3)
+        myGroupImage.layer.shadowColor = UIColor.black.cgColor
+    }
 }

@@ -4,35 +4,64 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FriendCollectionCell" customModule="Weather" customModuleProvider="target">
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FriendCollectionCell" customModule="Weather" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RRO-C0-WCn">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RRO-C0-WCn">
+                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8G-UA-G3s">
+                        <rect key="frame" x="5" y="78" width="21" height="22"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <state key="normal" image="heart" catalog="system">
+                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="tappedLikeItButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3Od-Al-2ew"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXq-Mn-8zl">
+                        <rect key="frame" x="36" y="79" width="10.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="RRO-C0-WCn" secondAttribute="trailing" id="4MI-A5-QT2"/>
-                <constraint firstAttribute="bottom" secondItem="RRO-C0-WCn" secondAttribute="bottom" id="Oif-D0-QST"/>
+                <constraint firstAttribute="trailing" secondItem="RRO-C0-WCn" secondAttribute="trailing" constant="5" id="4MI-A5-QT2"/>
+                <constraint firstItem="XXq-Mn-8zl" firstAttribute="leading" secondItem="a8G-UA-G3s" secondAttribute="trailing" constant="10" id="7sg-Ho-eQu"/>
+                <constraint firstAttribute="bottom" secondItem="XXq-Mn-8zl" secondAttribute="bottom" id="A6d-iD-Dbd"/>
+                <constraint firstItem="a8G-UA-G3s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="I2M-U9-E1q"/>
+                <constraint firstAttribute="bottom" secondItem="RRO-C0-WCn" secondAttribute="bottom" constant="5" id="Oif-D0-QST"/>
                 <constraint firstItem="RRO-C0-WCn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VcM-cL-ct4"/>
+                <constraint firstAttribute="bottom" secondItem="a8G-UA-G3s" secondAttribute="bottom" id="hcF-fM-f4f"/>
                 <constraint firstItem="RRO-C0-WCn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ndM-Lj-BuW"/>
             </constraints>
             <size key="customSize" width="91" height="74"/>
             <connections>
+                <outlet property="counterLabel" destination="XXq-Mn-8zl" id="AZw-gc-DfI"/>
                 <outlet property="friendImage" destination="RRO-C0-WCn" id="Tl4-CK-q8S"/>
+                <outlet property="likeItButton" destination="a8G-UA-G3s" id="ub5-cu-A9C"/>
             </connections>
             <point key="canvasLocation" x="165.94202898550725" y="81.696428571428569"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

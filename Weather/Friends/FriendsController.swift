@@ -44,6 +44,10 @@ class FriendsController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == segueOne else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
