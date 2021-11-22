@@ -49,7 +49,7 @@ class MyGroupsController: UITableViewController {
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
         guard unwindSegue.identifier == "addGroup" else { return }
         
-        guard let sourceVC = unwindSegue.source as? AllGroupsController else { return }
+        guard let sourceVC = unwindSegue.source as? All_GroupsController else { return }
         guard let indexPath = sourceVC.tableView.indexPathForSelectedRow else { return }
         
         let group = sourceVC.groups[indexPath.row]

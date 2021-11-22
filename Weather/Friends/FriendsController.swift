@@ -7,11 +7,9 @@
 
 import UIKit
 
-class FriendsController: UITableViewController {
+class FriendsController: UITableViewController, UISearchBarDelegate {
     
     let segueOne = "goToFriendCollection"
-    
-//    let sections = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     
     var friends = ["Donald",
                    "Popeye",
@@ -96,3 +94,4 @@ class FriendsController: UITableViewController {
         namesSection = namesSection.sorted()
     }
 }
+
