@@ -314,12 +314,19 @@
                             <constraint firstItem="2Dh-z3-FjR" firstAttribute="leading" secondItem="X2W-Ke-cHM" secondAttribute="leading" id="L6d-ak-X13"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gwc-hz-9wS"/>
+                    <navigationItem key="navigationItem" id="gwc-hz-9wS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="20E-AG-bjR">
+                            <connections>
+                                <segue destination="dyk-uc-fry" kind="unwind" identifier="addGroup" unwindAction="myUnwindActionWithUnwindSegue:" id="sgh-Lj-SRY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="allGoupsTableView" destination="2Dh-z3-FjR" id="cEn-oa-jx5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hb-Gz-Ijr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dyk-uc-fry" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4810" y="-1057"/>
         </scene>
@@ -372,84 +379,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="my groups" id="cSH-2H-Bim">
-                        <rightBarButtonItems>
-                            <barButtonItem title="all groups" id="szN-BU-k04">
-                                <connections>
-                                    <segue destination="gnF-dQ-Vpe" kind="show" id="knc-OM-pzb"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="GO" id="aRN-OF-6cp">
-                                <connections>
-                                    <segue destination="aQv-i8-oEq" kind="show" id="fp9-s8-yUK"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="GO" id="aRN-OF-6cp">
+                            <connections>
+                                <segue destination="aQv-i8-oEq" kind="show" identifier="" id="fp9-s8-yUK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLw-9p-THb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3818.8405797101454" y="-376.33928571428572"/>
-        </scene>
-        <!--all groups-->
-        <scene sceneID="1tL-Bi-glM">
-            <objects>
-                <tableViewController id="gnF-dQ-Vpe" customClass="All_GroupsController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7QP-8D-Yh6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupsCell" id="pIm-07-RHI" customClass="AllGroupsCell" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pIm-07-RHI" id="WEj-y3-mxC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ya-P5-1lx">
-                                            <rect key="frame" x="20" y="11.5" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YFU-Lg-5pv">
-                                            <rect key="frame" x="354" y="2" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="YFU-Lg-5pv" secondAttribute="height" multiplier="1:1" id="LHz-hz-3Re"/>
-                                                <constraint firstAttribute="height" constant="40" id="PPX-3R-q6l"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="8Ya-P5-1lx" firstAttribute="centerY" secondItem="WEj-y3-mxC" secondAttribute="centerY" id="Xtz-hM-vWD"/>
-                                        <constraint firstItem="8Ya-P5-1lx" firstAttribute="leading" secondItem="WEj-y3-mxC" secondAttribute="leadingMargin" id="k0p-1r-aDz"/>
-                                        <constraint firstAttribute="trailing" secondItem="YFU-Lg-5pv" secondAttribute="trailing" constant="20" id="qBX-mO-leN"/>
-                                        <constraint firstItem="YFU-Lg-5pv" firstAttribute="centerY" secondItem="WEj-y3-mxC" secondAttribute="centerY" id="yNc-OK-xqp"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="groupImage" destination="YFU-Lg-5pv" id="VDh-ND-rMr"/>
-                                    <outlet property="groupLabel" destination="8Ya-P5-1lx" id="939-a1-6BG"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gnF-dQ-Vpe" id="49o-LH-de9"/>
-                            <outlet property="delegate" destination="gnF-dQ-Vpe" id="cmF-7n-SdQ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="all groups" id="3jD-mq-luL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ywj-Wi-g6K">
-                            <connections>
-                                <segue destination="E7F-r2-e9O" kind="unwind" identifier="addGroup" unwindAction="myUnwindActionWithUnwindSegue:" id="aJ1-Lc-Ag0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hai-cT-34A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="E7F-r2-e9O" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4810.144927536232" y="-376.33928571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ceW-yb-QYp">

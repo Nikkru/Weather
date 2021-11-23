@@ -32,6 +32,8 @@ class AllGroupsViewController: UIViewController {
         
         allGoupsTableView.register(UINib(nibName: "AllGroupsCell", bundle: nil),
                              forCellReuseIdentifier: "AllGroupsCell")
+        
+        allGoupsTableView.register(UINib(nibName: "AllGroupsHeaderFooterView", bundle: nil), forCellReuseIdentifier: "Header")
     }
 }
 extension AllGroupsViewController: UITableViewDelegate {
@@ -86,19 +88,19 @@ extension AllGroupsViewController: UITableViewDataSource {
         
         return customCell
     }
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let header = UIView()
 //        header.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
 //        return header
         
         // добавляем кастомный хедер в контроллер для вывода на экран
-//       let headerView =  myTableView.dequeueReusableHeaderFooterView(withIdentifier: "Header")
-//        return headerView
-//    }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "SOME TEXT OF HEADER"
-//    }
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 30
-//    }
+       let headerView = allGoupsTableView.dequeueReusableHeaderFooterView(withIdentifier: "Header")
+        return headerView
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "SOME TEXT OF HEADER"
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
 }
