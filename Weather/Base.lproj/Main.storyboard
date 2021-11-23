@@ -292,7 +292,7 @@
             </objects>
             <point key="canvasLocation" x="3819" y="351"/>
         </scene>
-        <!--All Groups View Controller-->
+        <!--all groups-->
         <scene sceneID="RNG-PG-bah">
             <objects>
                 <viewController id="aQv-i8-oEq" customClass="AllGroupsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -314,7 +314,7 @@
                             <constraint firstItem="2Dh-z3-FjR" firstAttribute="leading" secondItem="X2W-Ke-cHM" secondAttribute="leading" id="L6d-ak-X13"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gwc-hz-9wS">
+                    <navigationItem key="navigationItem" title="all groups" id="gwc-hz-9wS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="20E-AG-bjR">
                             <connections>
                                 <segue destination="dyk-uc-fry" kind="unwind" identifier="addGroup" unwindAction="myUnwindActionWithUnwindSegue:" id="sgh-Lj-SRY"/>
@@ -328,7 +328,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hb-Gz-Ijr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="dyk-uc-fry" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4810" y="-1057"/>
+            <point key="canvasLocation" x="4832" y="-376"/>
         </scene>
         <!--my groups-->
         <scene sceneID="9if-oV-X3Z">
@@ -379,7 +379,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="my groups" id="cSH-2H-Bim">
-                        <barButtonItem key="rightBarButtonItem" title="GO" id="aRN-OF-6cp">
+                        <barButtonItem key="rightBarButtonItem" title="to all groups" id="aRN-OF-6cp">
                             <connections>
                                 <segue destination="aQv-i8-oEq" kind="show" identifier="" id="fp9-s8-yUK"/>
                             </connections>
