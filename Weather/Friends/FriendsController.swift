@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FriendsController: UITableViewController, UISearchBarDelegate {
+class FriendsController: UITableViewController {
     
     let segueOne = "goToFriendCollection"
     

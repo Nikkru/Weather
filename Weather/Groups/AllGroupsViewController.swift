@@ -9,6 +9,12 @@ import UIKit
 
 class AllGroupsViewController: UIViewController {
     
+//    private var searchController = UISearchController()
+//    private var searchingGroups = [String]()
+//    private var searchBarIsEmpty: Bool {
+//        guard let text = searchController.searchBar.text else {return false }
+//        return text.isEmpty
+//    }
     var groups = ["Picasso",
                     "Brodsky",
                     "Zvetayeva",
@@ -34,6 +40,12 @@ class AllGroupsViewController: UIViewController {
                              forCellReuseIdentifier: "AllGroupsCell")
         
         allGoupsTableView.register(UINib(nibName: "AllGroupsHeaderFooterView", bundle: nil), forCellReuseIdentifier: "Header")
+        
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search"
+//        allGoupsTableView.tableHeaderView = searchController.searchBar
+//        definesPresentationContext = true
     }
 }
 extension AllGroupsViewController: UITableViewDelegate {
@@ -76,8 +88,8 @@ extension AllGroupsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let customCell = tableView.dequeueReusableCell(withIdentifier: "AllGroupsCell", for: indexPath) as? AllGroupsCell else { return UITableViewCell()
-            
+        guard let customCell = tableView.dequeueReusableCell(withIdentifier: "AllGroupsCell", for: indexPath) as? AllGroupsCell else {
+            return UITableViewCell()
         }
         // Configure the cell...
         let group = groups[indexPath.row]
@@ -98,9 +110,26 @@ extension AllGroupsViewController: UITableViewDataSource {
         return headerView
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "SOME TEXT OF HEADER"
+        return "s"
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
 }
+//extension AllGroupsViewController: UISearchResultsUpdating {
+//
+//
+//
+//    func updateSearchResults(for searchController: UISearchController) {
+//        filterContentForSearching(searchController.searchBar.text!)
+//    }
+//    private func filterContentForSearching(_ searchText: String) {
+//
+//        searchingGroups = groups.filter({ (group) -> Bool in
+//            guard group.lowercased() == searchText.lowercased() else {
+//                return false
+//            }
+//            return true
+//        })
+//    }
+//}

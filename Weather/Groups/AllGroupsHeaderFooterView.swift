@@ -8,6 +8,7 @@
 import UIKit
 
 class AllGroupsHeaderFooterView: UITableViewHeaderFooterView {
+    @IBOutlet weak var groupSearchBar: UISearchBar!
     @IBOutlet weak var nameGroupLabel: UILabel!
     
     /*
