@@ -76,9 +76,14 @@ class FriendsController: UITableViewController {
         guard segue.identifier == segueOne else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let destinationVC: MyFriendController = segue.destination as! MyFriendController
-        let nameFriend = friends[indexPath.row]
-        destinationVC.image = nameFriend
+        let namesKey = namesSection[indexPath.section]
+        if let nameValue = namesDictionary[namesKey.lowercased()] {
+            let friend = nameValue[indexPath.row]
+
+            destinationVC.image = friend
+        }
     }
+    
     func generateFriendsDictionary() {
         for friend in friends {
             let key = "\(friend[friend.startIndex])"

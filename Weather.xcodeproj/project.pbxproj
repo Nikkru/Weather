@@ -162,11 +162,11 @@
 			children = (
 				2EDCF873274028DF009E1F04 /* FriendsController.swift */,
 				2E581A8B2742CF7F00A6DC89 /* MyFriendController.swift */,
-				2ED9B859274FAA9D00D1A5FC /* News */,
 				2E581A8E2742D1E300A6DC89 /* FriendCollectionCell.swift */,
 				2E581A8F2742D1E300A6DC89 /* FriendCollectionCell.xib */,
 				2EDCF87A27403BBA009E1F04 /* FriendTableCell.swift */,
 				2E8DDE692746DF590075EB9A /* IconView.swift */,
+				2ED9B859274FAA9D00D1A5FC /* News */,
 				2E581A942742D3E600A6DC89 /* Archiv */,
 			);
 			path = Friends;
