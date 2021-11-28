@@ -101,4 +101,28 @@ class MyGroupsController: UITableViewController {
          }
          */
     }
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.01) {
+            if let cell = tableView.cellForRow(at: indexPath) as? MyGroupsCell {
+                cell.myGroupImage.transform = .init(scaleX: 0.85, y: 0.85)
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            }
+        }
+    }
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 0.5,
+                       options: .curveEaseIn,
+                       animations: { [weak self] in
+                        if let cell = self?.tableView.cellForRow(at: indexPath) as? MyGroupsCell {
+                            
+                            cell.myGroupImage.transform = .identity
+                            cell.contentView.backgroundColor = .clear
+                        }
+                       },
+                       completion: nil)
+    }
 }

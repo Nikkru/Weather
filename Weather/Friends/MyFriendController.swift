@@ -26,11 +26,13 @@ class MyFriendController: UIViewController{
 }
 
 extension MyFriendController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        	
         var cell = UICollectionViewCell()
         if let friendCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCollectionCell", for: indexPath) as? FriendCollectionCell {
             friendCell.setupCell(name: image)
@@ -39,5 +41,26 @@ extension MyFriendController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     
+     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? FriendCollectionCell {
+                cell.friendImage.transform = .init(scaleX: 0.8, y: 0.8)
+                cell.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+            }
+        }
+    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        var cell = friendCollectionView.cellForItem(at: indexPath)
+//
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0,
+//                       usingSpringWithDamping: 1,
+//                       initialSpringVelocity: 1,
+//                       options: .repeat,
+//                       animations: ({
+//                        cell?.frame = self.friendCollectionView.bounds
+//                       }),
+//                       completion: nil)
+//    }
     
 }

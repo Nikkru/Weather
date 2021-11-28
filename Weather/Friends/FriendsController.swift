@@ -84,6 +84,10 @@ class FriendsController: UITableViewController {
         }
     }
     
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        
+//    }
+    
     func generateFriendsDictionary() {
         for friend in friends {
             let key = "\(friend[friend.startIndex])"

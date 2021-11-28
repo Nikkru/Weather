@@ -27,6 +27,14 @@ class FriendCollectionCell: UICollectionViewCell {
         setupCell(name: friendName)
         counterLabel.text = "\(counterLikeIt)"
     }
+    
+//    override var isSelected: Bool{
+//        didSet{
+//            UIView.animate(withDuration: 2.0) {
+//                self.friendImage.transform = self.isSelected ? CGAffineTransform(scaleX: 0.9, y: 0.9) : CGAffineTransform.identity
+//            }
+//        }
+//    }
 
     func setupCell(name: String?) {
         guard let friendName = name else {

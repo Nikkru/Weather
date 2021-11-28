@@ -50,6 +50,31 @@ class AllGroupsViewController: UIViewController {
 }
 extension AllGroupsViewController: UITableViewDelegate {
     
+    
+     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.01) {
+            if let cell = tableView.cellForRow(at: indexPath) as? AllGroupsCell {
+                cell.groupImage.transform = .init(scaleX: 0.85, y: 0.85)
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            }
+        }
+    }
+     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 0.5,
+                       options: .curveEaseIn,
+                       animations: { [weak self] in
+                        if let cell = self?.allGoupsTableView.cellForRow(at: indexPath) as? AllGroupsCell {
+                            
+                            cell.groupImage.transform = .identity
+                            cell.contentView.backgroundColor = .clear
+                        }
+                       },
+                       completion: nil)
+    }
     // Логика удаления в редактировании
 //    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 //        return true
