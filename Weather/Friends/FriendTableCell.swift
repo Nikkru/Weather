@@ -29,7 +29,7 @@ class FriendTableCell: UITableViewCell {
     func setupShadowIcon() {
         iconView.layer.cornerRadius = 20
         iconView.clipsToBounds = true
-//        iconView.layer.masksToBounds = false
+        iconView.layer.masksToBounds = false
         iconView.layer.shadowRadius = 10
         iconView.layer.shadowOpacity = 1.0
         iconView.layer.shadowOffset = CGSize(width: 3, height: 3)

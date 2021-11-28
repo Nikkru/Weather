@@ -31,6 +31,8 @@
 		2EDCF88927404D0D009E1F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCF88827404D0D009E1F04 /* User.swift */; };
 		2EDCF88C27404D36009E1F04 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCF88B27404D36009E1F04 /* Group.swift */; };
 		2EDCF88F27404DEC009E1F04 /* MyFriendCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCF88E27404DEC009E1F04 /* MyFriendCollectionController.swift */; };
+		2EDDF60E2753B8ED002DC00A /* UISpringTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF60D2753B8ED002DC00A /* UISpringTimingParameters.swift */; };
+		2EDDF6142753C61C002DC00A /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF6132753C61C002DC00A /* UIButtonExtension.swift */; };
 		2EFF02EB274BB6B70000AEC7 /* AllGroupsHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFF02EA274BB6B70000AEC7 /* AllGroupsHeaderFooterView.swift */; };
 		2EFF02EE274BB6C40000AEC7 /* AllGroupsHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFF02ED274BB6C40000AEC7 /* AllGroupsHeaderFooterView.xib */; };
 		2EFF02F1274BB89C0000AEC7 /* AllGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFF02F0274BB89C0000AEC7 /* AllGroupsViewController.swift */; };
@@ -64,6 +66,8 @@
 		2EDCF88827404D0D009E1F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2EDCF88B27404D36009E1F04 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		2EDCF88E27404DEC009E1F04 /* MyFriendCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendCollectionController.swift; sourceTree = "<group>"; };
+		2EDDF60D2753B8ED002DC00A /* UISpringTimingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpringTimingParameters.swift; sourceTree = "<group>"; };
+		2EDDF6132753C61C002DC00A /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		2EFF02EA274BB6B70000AEC7 /* AllGroupsHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsHeaderFooterView.swift; sourceTree = "<group>"; };
 		2EFF02ED274BB6C40000AEC7 /* AllGroupsHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllGroupsHeaderFooterView.xib; sourceTree = "<group>"; };
 		2EFF02F0274BB89C0000AEC7 /* AllGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				2E4EF8B72729E49B0085E459 /* Assets.xcassets */,
 				2E4EF8B92729E49B0085E459 /* LaunchScreen.storyboard */,
 				2E4EF8BC2729E49B0085E459 /* Info.plist */,
+				2EDDF60C2753B74D002DC00A /* Extensions */,
 				2EA368E52748FC450025E17B /* Interface */,
 			);
 			path = Weather;
@@ -179,6 +184,15 @@
 				2EDCF88B27404D36009E1F04 /* Group.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2EDDF60C2753B74D002DC00A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2EDDF60D2753B8ED002DC00A /* UISpringTimingParameters.swift */,
+				2EDDF6132753C61C002DC00A /* UIButtonExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +276,7 @@
 				2EDCF87B27403BBA009E1F04 /* FriendTableCell.swift in Sources */,
 				2EFF02F1274BB89C0000AEC7 /* AllGroupsViewController.swift in Sources */,
 				2EA368E32748FAAE0025E17B /* GradientView.swift in Sources */,
+				2EDDF6142753C61C002DC00A /* UIButtonExtension.swift in Sources */,
 				2EDCF88227404CB4009E1F04 /* MyGroupsCell.swift in Sources */,
 				2ED9B854274DA0B200D1A5FC /* NewsViewController.swift in Sources */,
 				2EDCF88F27404DEC009E1F04 /* MyFriendCollectionController.swift in Sources */,
@@ -269,6 +284,7 @@
 				2E4EF8C52729E5080085E459 /* LoginFormController.swift in Sources */,
 				2EDCF874274028DF009E1F04 /* FriendsController.swift in Sources */,
 				2E4EF8AF2729E49A0085E459 /* AppDelegate.swift in Sources */,
+				2EDDF60E2753B8ED002DC00A /* UISpringTimingParameters.swift in Sources */,
 				2E4EF8B12729E49A0085E459 /* SceneDelegate.swift in Sources */,
 				2E581A962742D69F00A6DC89 /* Friend.swift in Sources */,
 				2E8DDE6A2746DF590075EB9A /* IconView.swift in Sources */,

@@ -50,6 +50,30 @@ class NewsViewController: UIViewController {
 }
 extension NewsViewController: UITableViewDelegate {
     
+     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.01) {
+            if let cell = tableView.cellForRow(at: indexPath) as? NewsTableViewCell {
+                cell.imageImageView.transform = .init(scaleX: 0.85, y: 0.85)
+                cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            }
+        }
+    }
+     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 0.5,
+                       options: .curveEaseIn,
+                       animations: { [weak self] in
+                        if let cell = self?.newsTableView.cellForRow(at: indexPath) as? NewsTableViewCell {
+                            
+                            cell.imageImageView.transform = .identity
+                            cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                        }
+                       },
+                       completion: nil)
+    }
 }
 
 extension NewsViewController: UITableViewDataSource {

@@ -54,6 +54,7 @@ class FriendsController: UITableViewController {
             let friend = nameValue[indexPath.row]
             cell.nameFriendLabel.text = friend
             cell.avaFriendImage.image = UIImage(named: friend)
+            cell.setupShadowIcon()
         }
         return cell
     }
@@ -87,7 +88,30 @@ class FriendsController: UITableViewController {
 //    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 //        
 //    }
-    
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.01) {
+            if let cell = tableView.cellForRow(at: indexPath) as? FriendTableCell {
+                cell.iconView.transform = .init(scaleX: 0.85, y: 0.85)
+                cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            }
+        }
+    }
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 0.5,
+                       options: .curveEaseIn,
+                       animations: { [weak self] in
+                        if let cell = self?.tableView.cellForRow(at: indexPath) as? FriendTableCell {
+                            
+                            cell.iconView.transform = .identity
+                            cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                        }
+                       },
+                       completion: nil)
+    }
     func generateFriendsDictionary() {
         for friend in friends {
             let key = "\(friend[friend.startIndex])"

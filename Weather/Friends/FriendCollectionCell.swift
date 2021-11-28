@@ -42,7 +42,8 @@ class FriendCollectionCell: UICollectionViewCell {
         }
         self.friendImage.image = UIImage(named: friendName)
     }
-    @IBAction func tappedLikeItButton(_ sender: Any) {
+    @IBAction func tappedLikeItButton(_ sender: UIButton) {
+        likeIt ? sender.shake() : sender.pulsate(reverse: false)
         likeIt = !likeIt
         guard likeIt != true else {
             counterLikeIt += 1

@@ -35,11 +35,21 @@ class NewsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func sharedTappedButton(_ sender: Any) {
+    @IBAction func sharedTappedButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.countShareLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+        } completion: { [weak self] _ in
+            self?.countShareLabel.transform = .identity
+        }
+
+        sender.scale()
         countShare += 1
         countShareLabel.text = String(countShare)
+    
     }
-    @IBAction func likeItTappedButton(_ sender: Any) {
+    @IBAction func likeItTappedButton(_ sender: UIButton) {
+       
+        likeIt ? sender.shake() : sender.pulsate(reverse: false)
         likeIt = !likeIt
         guard likeIt != true else {
             countLikeIt += 1
@@ -52,8 +62,8 @@ class NewsTableViewCell: UITableViewCell {
         likeItButton.setImage(UIImage(systemName: "heart"), for: .normal)
         countLikeItLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
     }
-    @IBAction func commentTappedButton(_ sender: Any) {
-        
+    @IBAction func commentTappedButton(_ sender: UIButton) {
+        sender.shake()
     }
     
 }
