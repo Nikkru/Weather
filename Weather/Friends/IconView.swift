@@ -9,32 +9,52 @@ import UIKit
 
 @IBDesignable class IconView: UIView {
     
-    @IBInspectable var cornerRadius: CGFloat = 20 {
-        didSet {
-            setNeedsDisplay()
-            self.layer.cornerRadius = self.cornerRadius
-            self.clipsToBounds = true
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
         }
     }
-    @IBInspectable var shadowColor: UIColor = UIColor.black {
-        didSet{
-            self.layer.shadowColor = self.shadowColor.cgColor
+    @IBInspectable var shadowColor: UIColor? {
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
+         }
+    }
+    @IBInspectable var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
         }
     }
-    @IBInspectable var shadowRadius: CGFloat = 0 {
-        didSet {
-            setNeedsDisplay()
-            self.layer.shadowRadius = self.shadowRadius
+    @IBInspectable var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set {
+            layer.shadowOpacity = newValue
         }
     }
-    @IBInspectable var shadowOpacity: Float = 0.0 {
-        didSet{
-            self.layer.shadowOpacity = self.shadowOpacity
+    @IBInspectable var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
         }
-    }
-    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0) {
-        didSet{
-            self.layer.shadowOffset = self.shadowOffset}
+        set {
+            layer.shadowOffset = newValue
+        }
     }
 //    @IBInspectable var shadowPath: CGPath = UIBezierPath(rect: bounds).cgPath {
 //        didSet{

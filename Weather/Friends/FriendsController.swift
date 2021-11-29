@@ -22,6 +22,7 @@ class FriendsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         generateFriendsDictionary()
     }
     

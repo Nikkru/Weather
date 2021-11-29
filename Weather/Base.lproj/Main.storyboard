@@ -158,7 +158,7 @@
         <!--FRIENDS-->
         <scene sceneID="Fb5-Bg-Yvc">
             <objects>
-                <tableViewController id="a32-6Q-ztH" customClass="FriendsController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="a32-6Q-ztH" customClass="FriendsController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ai8-Ex-EmN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="50.5" height="50.5"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dt6-9x-21O" secondAttribute="height" multiplier="1:1" id="1WX-if-BGI"/>
                                                 <constraint firstItem="uH1-vd-Pah" firstAttribute="top" secondItem="dt6-9x-21O" secondAttribute="top" id="M8g-S0-OaI"/>
@@ -194,23 +193,20 @@
                                                 <constraint firstItem="uH1-vd-Pah" firstAttribute="leading" secondItem="dt6-9x-21O" secondAttribute="leading" id="hRh-oW-Int"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                                    <real key="value" value="20"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="20"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                    <size key="value" width="5" height="5"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="20"/>
-                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                    <real key="value" value="3"/>
+                                                    <real key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                    <real key="value" value="10"/>
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="3" height="3"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
@@ -240,6 +236,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="FRIENDS" id="bz0-hK-L1q"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4j-0W-dhL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,7 +375,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRW-57-xcu">
-                                            <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="11.5" width="314" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -394,6 +391,7 @@
                                     <constraints>
                                         <constraint firstItem="GJt-Y2-O7m" firstAttribute="centerY" secondItem="ZQk-2r-Uwb" secondAttribute="centerY" id="ItE-8B-EL0"/>
                                         <constraint firstAttribute="trailing" secondItem="GJt-Y2-O7m" secondAttribute="trailing" constant="20" id="bfV-wV-zTy"/>
+                                        <constraint firstItem="GJt-Y2-O7m" firstAttribute="leading" secondItem="SRW-57-xcu" secondAttribute="trailing" priority="750" constant="20" id="c2s-TD-WOC"/>
                                         <constraint firstItem="SRW-57-xcu" firstAttribute="centerY" secondItem="ZQk-2r-Uwb" secondAttribute="centerY" id="hiY-7o-hL4"/>
                                         <constraint firstItem="SRW-57-xcu" firstAttribute="leading" secondItem="ZQk-2r-Uwb" secondAttribute="leadingMargin" id="koW-gh-93K"/>
                                     </constraints>
@@ -424,7 +422,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ceW-yb-QYp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfw-oS-pYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4VG-Mh-KkR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCf-ir-egF">
@@ -436,6 +433,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dvB-rP-XNT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfw-oS-pYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
         </scene>
@@ -463,7 +461,6 @@
         <!--GROUPS-->
         <scene sceneID="25f-7r-2bL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v6i-ui-hEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QZk-K6-cjh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="GROUPS" id="URb-Xx-Uwg"/>
                     <toolbarItems/>
@@ -476,6 +473,7 @@
                         <segue destination="xNl-mB-xMw" kind="relationship" relationship="rootViewController" id="ela-NE-3NR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6i-ui-hEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2908.6956521739135" y="-376.33928571428572"/>
         </scene>

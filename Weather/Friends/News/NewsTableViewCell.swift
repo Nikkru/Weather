@@ -35,6 +35,7 @@ class NewsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func sharedTappedButton(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.countShareLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
@@ -61,6 +62,12 @@ class NewsTableViewCell: UITableViewCell {
         countLikeItLabel.text = String(countLikeIt)
         likeItButton.setImage(UIImage(systemName: "heart"), for: .normal)
         countLikeItLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        
+        let rotation = CATransform3DMakeRotation(.pi, 0, 1, 0)
+        self.countLikeItLabel.transform = CATransform3DGetAffineTransform(rotation)
+        UIView.animate(withDuration: 0.2) {
+            self.countLikeItLabel.transform = .identity
+        }
     }
     @IBAction func commentTappedButton(_ sender: UIButton) {
         sender.shake()

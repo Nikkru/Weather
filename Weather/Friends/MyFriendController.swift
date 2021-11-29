@@ -52,19 +52,5 @@ extension MyFriendController: UICollectionViewDataSource, UICollectionViewDelega
 //                cell.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
 //            }
         }
-    }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        var cell = friendCollectionView.cellForItem(at: indexPath)
-//
-//        UIView.animate(withDuration: 0.5,
-//                       delay: 0,
-//                       usingSpringWithDamping: 1,
-//                       initialSpringVelocity: 1,
-//                       options: .repeat,
-//                       animations: ({
-//                        cell?.frame = self.friendCollectionView.bounds
-//                       }),
-//                       completion: nil)
-//    }
-    
+    }    
 }
