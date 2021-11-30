@@ -290,6 +290,91 @@
             <point key="canvasLocation" x="3819" y="351"/>
         </scene>
         <!--NEWS-->
+        <scene sceneID="1pQ-im-fgT">
+            <objects>
+                <viewController title="NEWS" id="Iqh-Fc-sxa" customClass="NewsVC" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zDz-qZ-a3T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bender" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-XF-w22">
+                                <rect key="frame" x="137" y="88" width="140" height="140"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="left" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r7F-nP-Fcz">
+                                <rect key="frame" x="141" y="233" width="142.5" height="22"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YCf-On-cer">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8M-pN-lg8">
+                                                <rect key="frame" x="0.0" y="0.0" width="20.5" height="22"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" image="heart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="likeItTappedBatton:" destination="Iqh-Fc-sxa" eventType="touchUpInside" id="7Y0-dA-Zvy"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9a-xa-pdi">
+                                                <rect key="frame" x="25.5" y="1" width="10.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUN-aF-Ar6">
+                                        <rect key="frame" x="56" y="0.0" width="20.5" height="22"/>
+                                        <state key="normal" image="square.and.pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="commentTappedButton:" destination="Iqh-Fc-sxa" eventType="touchUpInside" id="Lb5-4c-8eD"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0PH-S8-VIz">
+                                        <rect key="frame" x="96.5" y="0.0" width="46" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-qw-lWx">
+                                                <rect key="frame" x="0.0" y="0.0" width="19" height="22"/>
+                                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                                <connections>
+                                                    <action selector="shareTappedButton:" destination="Iqh-Fc-sxa" eventType="touchUpInside" id="V4p-WB-Nej"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ume-CA-8Pt">
+                                                <rect key="frame" x="27" y="1" width="19" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uYA-LR-fIl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xUN-aF-Ar6" firstAttribute="centerX" secondItem="6X3-XF-w22" secondAttribute="centerX" id="0Kt-ou-xfO"/>
+                            <constraint firstItem="6X3-XF-w22" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uYA-LR-fIl" secondAttribute="leading" id="6Lm-92-9bd"/>
+                            <constraint firstItem="6X3-XF-w22" firstAttribute="centerX" secondItem="zDz-qZ-a3T" secondAttribute="centerX" id="Eb6-SG-QHv"/>
+                            <constraint firstItem="6X3-XF-w22" firstAttribute="top" secondItem="zDz-qZ-a3T" secondAttribute="top" constant="88" id="IRJ-Z4-nv9"/>
+                            <constraint firstItem="r7F-nP-Fcz" firstAttribute="top" secondItem="6X3-XF-w22" secondAttribute="bottom" constant="5" id="RuS-9Z-09Q"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="NEWS" id="uiO-Vz-VJi"/>
+                    <connections>
+                        <outlet property="commentButton" destination="xUN-aF-Ar6" id="WVu-oe-Sq0"/>
+                        <outlet property="countLikeItLabel" destination="P9a-xa-pdi" id="mJ4-dK-5UG"/>
+                        <outlet property="countShareLabel" destination="Ume-CA-8Pt" id="Ndl-ve-wAX"/>
+                        <outlet property="likeItButton" destination="A8M-pN-lg8" id="nbf-5G-bY8"/>
+                        <outlet property="newImageView" destination="6X3-XF-w22" id="Udk-f4-7Tt"/>
+                        <outlet property="shareButton" destination="WHW-qw-lWx" id="aDd-Pm-uot"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHY-nc-ouA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="838.39285714285711"/>
+        </scene>
+        <!--NEWS-->
         <scene sceneID="H4k-vD-XOW">
             <objects>
                 <viewController id="Apl-ST-Gam" customClass="NewsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -298,7 +383,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zjc-ah-Ckt">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -451,7 +536,7 @@
                     <connections>
                         <segue destination="QZk-K6-cjh" kind="relationship" relationship="viewControllers" id="Gkp-qq-4Lx"/>
                         <segue destination="a32-6Q-ztH" kind="relationship" relationship="viewControllers" id="lV3-Sw-qao"/>
-                        <segue destination="Apl-ST-Gam" kind="relationship" relationship="viewControllers" id="1zC-hr-ndC"/>
+                        <segue destination="Iqh-Fc-sxa" kind="relationship" relationship="viewControllers" id="lRQ-YN-t2S"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L76-br-z5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -480,8 +565,15 @@
     </scenes>
     <resources>
         <image name="anonymous" width="50" height="50"/>
+        <image name="bender" width="140" height="140"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

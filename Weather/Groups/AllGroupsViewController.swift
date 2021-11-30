@@ -39,7 +39,7 @@ class AllGroupsViewController: UIViewController {
         allGoupsTableView.register(UINib(nibName: "AllGroupsCell", bundle: nil),
                              forCellReuseIdentifier: "AllGroupsCell")
         
-        allGoupsTableView.register(UINib(nibName: "AllGroupsHeaderFooterView", bundle: nil), forCellReuseIdentifier: "Header")
+//        allGoupsTableView.register(UINib(nibName: "AllGroupsHeaderFooterView", bundle: nil), forCellReuseIdentifier: "Header")
         
 //        searchController.searchResultsUpdater = self
 //        searchController.obscuresBackgroundDuringPresentation = false
@@ -131,16 +131,17 @@ extension AllGroupsViewController: UITableViewDataSource {
 //        return header
         
         // добавляем кастомный хедер в контроллер для вывода на экран
-       let headerView = allGoupsTableView.dequeueReusableHeaderFooterView(withIdentifier: "Header")
+        let headerView = Bundle.main.loadNibNamed("AllGroupsHeaderFooterView", owner: self, options: nil)?.first as! AllGroupsHeaderFooterView
+        headerView.nameGroupLabel.text = "Something"
+        headerView.groupSearchBar.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         return headerView
-    }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "s"
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
-    }
-}
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "s"
+//    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 30
+//    }
+//}
 //extension AllGroupsViewController: UISearchResultsUpdating {
 //
 //
@@ -156,5 +157,5 @@ extension AllGroupsViewController: UITableViewDataSource {
 //            }
 //            return true
 //        })
-//    }
-//}
+    }
+}

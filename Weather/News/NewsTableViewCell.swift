@@ -24,10 +24,26 @@ class NewsTableViewCell: UITableViewCell {
             countLikeItLabel.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         }
     }
+    var positionImage = 0
+    var imageArray = [String]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipe(gesture:)))
+        
+        imageImageView.addGestureRecognizer(swipeGesture)
+        imageImageView.isUserInteractionEnabled = true
+        imageImageView.isMultipleTouchEnabled = true
+        swipeGesture.direction = UISwipeGestureRecognizer.Direction.left
+    }
+    
+    @objc func leftSwipe(gesture: UISwipeGestureRecognizer) {
+        positionImage += 1
+    }
+    
+    @objc func swipeGesture(_ gesture: UISwipeGestureRecognizer) {
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,16 +53,15 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     @IBAction func sharedTappedButton(_ sender: UIButton) {
+        
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.countShareLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         } completion: { [weak self] _ in
             self?.countShareLabel.transform = .identity
         }
-
         sender.scale()
         countShare += 1
         countShareLabel.text = String(countShare)
-    
     }
     @IBAction func likeItTappedButton(_ sender: UIButton) {
        
@@ -69,6 +84,7 @@ class NewsTableViewCell: UITableViewCell {
             self.countLikeItLabel.transform = .identity
         }
     }
+    
     @IBAction func commentTappedButton(_ sender: UIButton) {
         sender.shake()
     }

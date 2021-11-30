@@ -12,15 +12,18 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
     
     let news = News()
-//    let news1 = New(title: "Fresh News", image: "mikki", nameUser: "Mickey M")
+    var positionImage = 0
+    var imageArray = ["Mickey Mouse",
+                      "mickey_1",
+                      "mickey_2",
+                      "mickey_3"]
+    let swipeGesture = UISwipeGestureRecognizer(target: NewsTableViewCell.self, action: #selector(leftSwipe(gesture:)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        news.newsArray.append(news1)
-        
-    configTableView()
-        
+        configTableView()
+        setupGesture()
     }
     
     private func configTableView() {
@@ -30,24 +33,34 @@ class NewsViewController: UIViewController {
         
         newsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil),
                              forCellReuseIdentifier: "CustomNewCell")
-        createNew("Some News", "Mickey M", "Mickey Mouse")
+        createNew(title: "Some News",
+                  image: "Mickey M",
+                  name: "Mickey Mouse")
     }
     
-    private func createNew(_ title: String, _ image: String, _ name: String) {
-        let new = New(title: title, image: image, nameUser: name)
+    private func setupGesture() {
+      
+        swipeGesture.direction = UISwipeGestureRecognizer.Direction.left
+
+    }
+    
+    @objc func leftSwipe(gesture: UISwipeGestureRecognizer) {
+        print("swipe left")
+        positionImage += 1
+    }
+    
+    @objc func swipeGesture(_ gesture: UISwipeGestureRecognizer) {
+        
+    }
+    
+    private func createNew(title: String, image: String, name: String) {
+        let new = New(title: title,
+                      image: image,
+                      nameUser: name)
         news.newsArray.append(new)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
 extension NewsViewController: UITableViewDelegate {
     
      func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
@@ -58,6 +71,7 @@ extension NewsViewController: UITableViewDelegate {
             }
         }
     }
+    
      func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         
         UIView.animate(withDuration: 0.5,
@@ -67,7 +81,6 @@ extension NewsViewController: UITableViewDelegate {
                        options: .curveEaseIn,
                        animations: { [weak self] in
                         if let cell = self?.newsTableView.cellForRow(at: indexPath) as? NewsTableViewCell {
-                            
                             cell.imageImageView.transform = .identity
                             cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                         }
@@ -86,8 +99,6 @@ extension NewsViewController: UITableViewDataSource {
         return news.newsArray.count
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "CustomNewCell", for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
@@ -95,9 +106,9 @@ extension NewsViewController: UITableViewDataSource {
         let new = news.newsArray[indexPath.row]
         customCell.titleLabel.text = new.title
         customCell.imageImageView.image = UIImage(named: new.image ?? "news")
+        customCell.imageImageView.addGestureRecognizer(swipeGesture)
+        customCell.imageImageView.isMultipleTouchEnabled = true
         
         return customCell
     }
-    
-    
 }
