@@ -8,15 +8,8 @@
 import UIKit
 
 class AllGroupsHeaderFooterView: UITableViewHeaderFooterView {
-    @IBOutlet weak var groupSearchBar: UISearchBar!
-    @IBOutlet weak var nameGroupLabel: UILabel!
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var groupSearchBar: UISearchBar!
+//    @IBOutlet weak var nameGroupLabel: UILabel!
 
 }
